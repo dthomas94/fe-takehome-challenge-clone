@@ -2,7 +2,7 @@
 
 Hello front-end developer! Welcome. I'm Sunny; you've either met me during our interview, or you will soon, either way here's my Apple emoji!
 
-<Add Image>
+![Alt text](/memoji.png?raw=true 'Me')
 
 ## Your mission
 
