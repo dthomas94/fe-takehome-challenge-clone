@@ -14,6 +14,7 @@ Your mission, should you choose to accept it, is to carve out 2-4 hours and crea
 
 - Build an app that provides the ability for a user to select the vehicle that they own or lease. We've provided a set of endpoints that will provide you with necessary data to accomplish the above. [API](#Clearcover-Vehicle-API)
 - Once the user has found the car they are looking for, come up with a way to signal to the user that their vehicle was found! This doesn't have to be anything grand; maybe some text below with the `vehicle_service_id` (which gets returned once vehicle is found based on a given criteria).
+- Assume this code will be in production, so try to keep it simple and bug-free as much as possible.
 - Be creative with this. We want to see a functional site that uses the api. When in doubt, make an executive decision.
   _Functionality is more important than the look and feel. If you finish early, feel free to polish it up._
 
