@@ -164,4 +164,4 @@ Sample Response:
 
 ## FIN
 
-Once finished, please send your github solution link to troh@clearcover.com
+Have fun with this! Once finished, please send your github repo link to troh@clearcover.com
