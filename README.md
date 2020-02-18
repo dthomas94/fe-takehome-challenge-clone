@@ -43,7 +43,7 @@ When I'm looking at your code to assess, here's the order of importance for what
 - Write tests! Time-permitting, write enough tests where you feel confident in the code and its functionality. Out of the box, the app supports [React-testing-library](https://github.com/testing-library/react-testing-library), but use whatever framework you're most comfortable with.
 - PR Hygiene: Don't sweat this too much, but if you want to showcase your awesome PR organization, feel free to!
 
-## (#cc-api)Clearcover Vehicle API
+## (#cc-api) Clearcover Vehicle API
 
 All API requests are made to:
 
