@@ -12,7 +12,7 @@ Your mission, should you choose to accept it, is to carve out 2-4 hours and crea
 
 ## Your tasks
 
-- Build an app that provides the ability for a user to select the vehicle that they own or lease. We've provided a set of endpoints that will provide you with necessary data to accomplish the above. **See below for API**
+- Build an app that provides the ability for a user to select the vehicle that they own or lease. We've provided a set of endpoints that will provide you with necessary data to accomplish the above. [API](#cc-api)
 - Once the user has found the car they are looking for, come up with a way to signal to the user that their vehicle was found! This doesn't have to be anything grand; maybe some text below with the `vehicle_service_id` (which gets returned once vehicle is found based on a given criteria).
 - Be creative with this. We want to see a functional site that uses the api. When in doubt, make an executive decision.
   _Functionality is more important than the look and feel. If you finish early, feel free to polish it up._
@@ -43,7 +43,7 @@ When I'm looking at your code to assess, here's the order of importance for what
 - Write tests! Time-permitting, write enough tests where you feel confident in the code and its functionality. Out of the box, the app supports [React-testing-library](https://github.com/testing-library/react-testing-library), but use whatever framework you're most comfortable with.
 - PR Hygiene: Don't sweat this too much, but if you want to showcase your awesome PR organization, feel free to!
 
-## Clearcover Vehicle API
+## (#cc-api)Clearcover Vehicle API
 
 All API requests are made to:
 
