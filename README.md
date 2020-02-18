@@ -20,7 +20,7 @@ Your mission, should you choose to accept it, is to carve out 2-4 hours and crea
 ## Some Tips & Tricks
 
 - We've provided quite a bit of tooling for you. The app is built on [Create React App](https://create-react-app.dev/).
-  - You will need `Node` & `npm` to be able to run the app. [Check out this link if you need help installing above](https://treehouse.github.io/installation-guides/mac/node-mac.html).
+  - You will need `Node` & `npm` to be able to run the app. [Check out this link if you need help installing these](https://treehouse.github.io/installation-guides/mac/node-mac.html).
   - Fork this repository into your own github profile, and pull down the repository locally.
   - Once in the directory locally, run `npm install && npm start`. - This will open up a browser at `http://localhost:3000`; switch that to `http://0.0.0.0:3000` to make sure the API endpoints work properly. Unfortunately due to CORS, this is a limitation but the `0.0.0.0` is whitelisted. This will be fixed in future versions.
 - The API lives under `src/Services/vehicle`. I have added a commented out file path for the vehicle service in `src/App.js`.
