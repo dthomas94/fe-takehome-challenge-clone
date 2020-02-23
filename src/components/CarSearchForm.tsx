@@ -5,12 +5,11 @@ import {
 	getModelsByMakeYear,
 	getBodyStylesByModelYearMake,
 	getVehicle,
-	CCAPI$VehicleResponseType,
 } from "../Services/vehicle/http";
 import { Box, Select } from "grommet";
 
 const CarSearchForm: FC<{
-	setVehicle: (vehicle?: CCAPI$VehicleResponseType) => void;
+	setVehicle: React.Dispatch<any>;
 }> = ({ setVehicle }) => {
 	const [filters, setFilters] = useState({
 		year: "",
@@ -18,18 +17,19 @@ const CarSearchForm: FC<{
 		model: "",
 		bodyStyle: "",
 	});
-	const [years, setYears] = useState();
-	const [makes, setMakes] = useState();
-	const [models, setModels] = useState();
-	const [bodyStyles, setBodyStyles] = useState();
+	const [years, setYears] = useState([{value: '', label:''}]);
+	const [makes, setMakes] = useState([{value: '', label:''}]);
+	const [models, setModels] = useState([{value: '', label:''}]);
+	const [bodyStyles, setBodyStyles] = useState([{value: '', label:''}]);
 
 	useEffect(() => {
-		getYears().then(res => {
-			setYears(res);
-			if (res) {
+		getYears().then(years => {
+      if (years) {
+			setYears(years);
+			
 				setFilters({
 					...filters,
-					year: res[0].value.toString(),
+					year: years[0].value.toString(),
 				});
 			}
 		});
@@ -39,6 +39,7 @@ const CarSearchForm: FC<{
 	useEffect(() => {
 		if (filters.year) {
 			getMakesByYear(`${filters.year}`).then(makes => {
+        if (makes)
 				setMakes(makes);
 			});
 		}
@@ -48,6 +49,7 @@ const CarSearchForm: FC<{
 		const { year, make } = filters;
 		if (make) {
 			getModelsByMakeYear(`${year}`, make).then(models => {
+        if (models)
 				setModels(models);
 			});
 		}
@@ -58,6 +60,7 @@ const CarSearchForm: FC<{
 		const { year, make, model } = filters;
 		if (model) {
 			getBodyStylesByModelYearMake(`${year}`, make, model).then(styles => {
+        if (styles)
 				setBodyStyles(styles);
 			});
 		}
