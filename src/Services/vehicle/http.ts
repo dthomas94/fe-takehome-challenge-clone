@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://api.clearcoverpartner.com/api/v2";
+export const BASE_URL = "https://api.clearcoverpartner.com/api/v2";
 const BASE_AXIOS_CONFIG = {
 	responseType: "json" as const,
 	baseURL: BASE_URL,
@@ -16,11 +16,10 @@ export const getYears = async () => {
 		const { data } = await axios.get<CCAPI$ResponseType>(
 			"/vehicles/years",
 			BASE_AXIOS_CONFIG
-		);
+    );
 		return data;
 	} catch (error) {
     console.error(error);
-    return [];
 	}
 };
 

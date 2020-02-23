@@ -26,10 +26,12 @@ const CarSearchForm: FC<{
 	useEffect(() => {
 		getYears().then(res => {
 			setYears(res);
-			setFilters({
-				...filters,
-				year: res[0].value.toString(),
-			});
+			if (res) {
+				setFilters({
+					...filters,
+					year: res[0].value.toString(),
+				});
+			}
 		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -83,6 +85,7 @@ const CarSearchForm: FC<{
 			<Box>
 				<label htmlFor="years">Year:</label>
 				<Select
+					data-testid="select-year"
 					placeholder="Select"
 					name="years"
 					options={years}
@@ -102,6 +105,7 @@ const CarSearchForm: FC<{
 			<Box>
 				<label htmlFor="makes">Make:</label>
 				<Select
+					data-testid="select-make"
 					placeholder="Select"
 					name="makes"
 					options={makes}
@@ -121,6 +125,7 @@ const CarSearchForm: FC<{
 			<Box>
 				<label htmlFor="models">Model:</label>
 				<Select
+					data-testid="select-model"
 					placeholder="Select"
 					name="models"
 					options={models}
@@ -135,6 +140,7 @@ const CarSearchForm: FC<{
 			<Box>
 				<label htmlFor="bodyStyles">Body:</label>
 				<Select
+					data-testid="select-body-style"
 					placeholder="Select"
 					name="bodyStyles"
 					options={bodyStyles}
