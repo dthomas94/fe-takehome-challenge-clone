@@ -8,7 +8,6 @@ import {
 	CCAPI$VehicleResponseType,
 } from "../Services/vehicle/http";
 import { Box, Select } from "grommet";
-import useDeepCompareEffect from "use-deep-compare-effect";
 
 const CarSearchForm: FC<{
 	setVehicle: (vehicle?: CCAPI$VehicleResponseType) => void;
@@ -35,35 +34,52 @@ const CarSearchForm: FC<{
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	useDeepCompareEffect(() => {
-		const { year, make, model, bodyStyle } = filters;
-		if (year) {
-			getMakesByYear(`${year}`).then(makes => {
+	useEffect(() => {
+		if (filters.year) {
+			getMakesByYear(`${filters.year}`).then(makes => {
 				setMakes(makes);
 			});
-
-			if (make) {
-				getModelsByMakeYear(`${year}`, make).then(models => {
-					setModels(models);
-				});
-
-				if (model) {
-					getBodyStylesByModelYearMake(`${year}`, make, model).then(styles => {
-						setBodyStyles(styles);
-					});
-
-					if (bodyStyle) {
-						getVehicle(`${year}`, make, model, bodyStyle).then(res => {
-							setVehicle(res);
-						});
-					}
-				}
-			}
 		}
-	}, [filters]);
+	}, [filters.year]);
+
+	useEffect(() => {
+		const { year, make } = filters;
+		if (make) {
+			getModelsByMakeYear(`${year}`, make).then(models => {
+				setModels(models);
+			});
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [filters.make]);
+
+	useEffect(() => {
+		const { year, make, model } = filters;
+		if (model) {
+			getBodyStylesByModelYearMake(`${year}`, make, model).then(styles => {
+				setBodyStyles(styles);
+			});
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [filters.model]);
+
+	useEffect(() => {
+		const { year, make, model, bodyStyle } = filters;
+
+		if (bodyStyle) {
+			getVehicle(`${year}`, make, model, bodyStyle).then(res => {
+				setVehicle(res);
+			});
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [filters.bodyStyle]);
 
 	return (
-		<Box direction="row" justify="center" gap="xsmall" data-testid="car-search-form">
+		<Box
+			direction="row"
+			justify="center"
+			gap="xsmall"
+			data-testid="car-search-form"
+		>
 			<Box>
 				<label htmlFor="years">Year:</label>
 				<Select
