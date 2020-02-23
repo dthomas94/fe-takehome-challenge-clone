@@ -17,16 +17,16 @@ const CarSearchForm: FC<{
 		model: "",
 		bodyStyle: "",
 	});
-	const [years, setYears] = useState([{value: '', label:''}]);
-	const [makes, setMakes] = useState([{value: '', label:''}]);
-	const [models, setModels] = useState([{value: '', label:''}]);
-	const [bodyStyles, setBodyStyles] = useState([{value: '', label:''}]);
+	const [years, setYears] = useState([{ value: "", label: "" }]);
+	const [makes, setMakes] = useState([{ value: "", label: "" }]);
+	const [models, setModels] = useState([{ value: "", label: "" }]);
+	const [bodyStyles, setBodyStyles] = useState([{ value: "", label: "" }]);
 
 	useEffect(() => {
 		getYears().then(years => {
-      if (years) {
-			setYears(years);
-			
+			if (years) {
+				setYears(years);
+
 				setFilters({
 					...filters,
 					year: years[0].value.toString(),
@@ -39,8 +39,7 @@ const CarSearchForm: FC<{
 	useEffect(() => {
 		if (filters.year) {
 			getMakesByYear(`${filters.year}`).then(makes => {
-        if (makes)
-				setMakes(makes);
+				if (makes) setMakes(makes);
 			});
 		}
 	}, [filters.year]);
@@ -49,8 +48,7 @@ const CarSearchForm: FC<{
 		const { year, make } = filters;
 		if (make) {
 			getModelsByMakeYear(`${year}`, make).then(models => {
-        if (models)
-				setModels(models);
+				if (models) setModels(models);
 			});
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -60,8 +58,7 @@ const CarSearchForm: FC<{
 		const { year, make, model } = filters;
 		if (model) {
 			getBodyStylesByModelYearMake(`${year}`, make, model).then(styles => {
-        if (styles)
-				setBodyStyles(styles);
+				if (styles) setBodyStyles(styles);
 			});
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -71,8 +68,8 @@ const CarSearchForm: FC<{
 		const { year, make, model, bodyStyle } = filters;
 
 		if (bodyStyle) {
-			getVehicle(`${year}`, make, model, bodyStyle).then(res => {
-				setVehicle(res);
+			getVehicle(`${year}`, make, model, bodyStyle).then(vehicle => {
+				if (vehicle) setVehicle(vehicle);
 			});
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -150,9 +147,9 @@ const CarSearchForm: FC<{
 					labelKey="label"
 					valueKey="value"
 					value={filters.bodyStyle}
-					onChange={({ value: bodyStyleObj }) =>
-						setFilters({ ...filters, bodyStyle: bodyStyleObj.value })
-					}
+					onChange={({ value: bodyStyleObj }) => {
+						setFilters({ ...filters, bodyStyle: bodyStyleObj.value });
+					}}
 				/>
 			</Box>
 		</Box>

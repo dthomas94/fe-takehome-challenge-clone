@@ -7,7 +7,7 @@ import { Box } from "grommet";
 
 const App: FC = () => {
 	const [vehicle, setVehicle] = useState();
-
+	
 	return (
 		<Box className="App" background="#282c34" height="100vh">
 			<Box align="center" justify="center" height="medium">

@@ -67,6 +67,7 @@ export const getBodyStylesByModelYearMake = async (
 };
 
 export type CCAPI$VehicleResponseType = {
+  under_2500: boolean;
 	id: string;
 	year: string;
 	make: string;
