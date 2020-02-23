@@ -1,12 +1,12 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import VehicleCard from "./VehicleCard";
+import VehicleCard from "../VehicleCard";
 
 describe("VehicleCard", () => {
 	test("shows the vehicle details", () => {
 		const vehicle = {
 			year: 2019,
-			make: "Subarua",
+			make: "Subaru",
 			model: "Legacy",
 			body_style: "4dr Sedan",
 			partial_vin: "WOEKGSDJROE",
