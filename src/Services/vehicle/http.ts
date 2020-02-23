@@ -17,7 +17,7 @@ export const getYears = async () => {
 			"/vehicles/years",
 			BASE_AXIOS_CONFIG
 		);
-		return data ? data : [];
+		return data;
 	} catch (error) {
     console.error(error);
     return [];
