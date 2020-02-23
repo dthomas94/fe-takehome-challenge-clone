@@ -15,7 +15,7 @@ const App: FC = () => {
 				<p>Ready. Set. Build.</p>
 			</Box>
 			<Box align="center">
-				<CarSearchForm setVehicle={setVehicle} />
+				<CarSearchForm  setVehicle={setVehicle} />
 				{vehicle && <VehicleCard vehicle={vehicle} />}
 			</Box>
 		</Box>

@@ -62,10 +62,8 @@ const CarSearchForm: FC<{
 		}
 	}, [filters]);
 
-	console.log(filters);
-
 	return (
-		<Box direction="row" justify="center" gap="xsmall">
+		<Box direction="row" justify="center" gap="xsmall" data-testid="car-search-form">
 			<Box>
 				<label htmlFor="years">Year:</label>
 				<Select

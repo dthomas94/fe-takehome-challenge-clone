@@ -19,6 +19,7 @@ const VehicleCard: FC<{ vehicle: CCAPI$VehicleResponseType }> = ({
       overflowWrap: 'break-word'
     }}
     margin={{top: "small"}}
+    data-testid="vehicle-card"
 	>
 		<Car size="large" color="light-2" />
 		<Text>
