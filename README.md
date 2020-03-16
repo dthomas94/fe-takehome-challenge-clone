@@ -1,9 +1,3 @@
-# Clearcover's Front-end App Challenge
-
-Hello front-end developer! Welcome. I'm Sunny; you've either met me during our interview, or you will soon, either way here's my Apple emoji!
-
-![Alt text](/memoji.png?raw=true 'Me')
-
 ## Your mission
 
 Your mission, should you choose to accept it, is to carve out 2-4 hours and create a single page app using the API defined below.
